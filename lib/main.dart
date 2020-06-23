@@ -1,4 +1,5 @@
 import 'package:dicodingflutter/codelab1.dart';
+import 'package:dicodingflutter/rainbow.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -31,6 +32,14 @@ class MyApp extends StatelessWidget {
                         child: Text('Codelab 1'),
                         onPressed: () {
                           navigateToOtherPage(context, Codelab1());
+                        },
+                      ),
+                      RaisedButton(
+                        textColor: Colors.white,
+                        color: Colors.blue,
+                        child: Text('Rainbow'),
+                        onPressed: () {
+                          navigateToOtherPage(context, Rainbow());
                         },
                       ),
                     ],
