@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
                       RaisedButton(
                         textColor: Colors.white,
                         color: Colors.blue,
-                        child: Text('Codelab 1'),
+                        child: Text('Codelab'),
                         onPressed: () {
                           navigateToOtherPage(context, Codelab1());
                         },
@@ -42,6 +42,7 @@ class MyApp extends StatelessWidget {
                           navigateToOtherPage(context, Rainbow());
                         },
                       ),
+                      ButtomFav(),
                     ],
                   ),
                 ),
@@ -49,5 +50,29 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ));
+  }
+}
+
+class ButtomFav extends StatefulWidget {
+  @override
+  _ButtomFavState createState() => _ButtomFavState();
+}
+
+class _ButtomFavState extends State<ButtomFav> {
+  bool isFav = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      icon: Icon(
+        isFav ? Icons.favorite : Icons.favorite_border,
+        color: Colors.redAccent,
+      ),
+      onPressed: () {
+        setState(() {
+          isFav = !isFav;
+        });
+      },
+    );
   }
 }
