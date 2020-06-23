@@ -4,6 +4,10 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  navigateToOtherPage(context, dest) {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => dest));
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -26,12 +30,9 @@ class MyApp extends StatelessWidget {
                         color: Colors.blue,
                         child: Text('Codelab 1'),
                         onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Codelab1()));
+                          navigateToOtherPage(context, Codelab1());
                         },
-                      )
+                      ),
                     ],
                   ),
                 ),
