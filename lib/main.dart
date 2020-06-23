@@ -1,6 +1,7 @@
 import 'package:dicodingflutter/codelab1.dart';
 import 'package:dicodingflutter/rainbow.dart';
 import 'package:flutter/material.dart';
+import 'config.dart';
 
 void main() => runApp(MyApp());
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
             ),
             body: SafeArea(
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(margin),
                 child: Container(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -66,7 +67,7 @@ class _ButtomFavState extends State<ButtomFav> {
     return IconButton(
       icon: Icon(
         isFav ? Icons.favorite : Icons.favorite_border,
-        color: Colors.redAccent,
+        color: isFav ? Colors.redAccent : Colors.grey[400],
       ),
       onPressed: () {
         setState(() {
